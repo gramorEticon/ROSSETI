@@ -35,4 +35,9 @@ class ApiMethods(){
            }
         }
     }
+    fun getAppList(){
+        GlobalScope.launch(Dispatchers.IO){
+
+        }
+    }
 }

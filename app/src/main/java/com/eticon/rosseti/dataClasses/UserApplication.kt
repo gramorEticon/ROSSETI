@@ -8,7 +8,7 @@ data class UserApplication (
     var user_id:Int = 0,
     var dateStart:String = "",
     var status:String = "",
-    var userList:List<UserData> = listOf(),
+    var userList:List<SubscribeUser> = listOf(),
     var name:String = "",
     var category:String = "",
     var problems:String = "",
@@ -34,12 +34,14 @@ data class Stage(
 )
 //Дата класс вознаграждения
 data class Award(
-    var firstName: String = "",
-    var lastName:String = "",
+    var name:String =  "",
     var award: Int =  0
 )
 
-
+//Список участников инициативы
+data class SubscribeUser(
+    var name:String = ""
+)
 //Список возможных категорий для заявки
 var categoryAppList = listOf<String>(
     "Эксплуатация подстанций (подстанционного оборудования)",
