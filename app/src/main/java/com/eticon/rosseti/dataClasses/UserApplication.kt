@@ -16,15 +16,15 @@ data class UserApplication (
     var effect:String = "",
     var costs:List<Cost> = listOf(),
     var stages : List<Stage> = listOf(),
-    var awards:List<Award> = listOf()
-
+    var awards:List<Award> = listOf(),
+    var comments:List<Comment> = listOf()
 )
 
 //Дата класс необходимый для реализации затрат
 data class Cost(
     var number:Int = 0,
     var name:String = "",
-    var sum:Int = 0
+    var sumMax:Int = 0
 )
 //Дата класс этапов внедрения
 data class Stage(
@@ -38,6 +38,8 @@ data class Award(
     var lastName:String = "",
     var award: Int =  0
 )
+
+
 //Список возможных категорий для заявки
 var categoryAppList = listOf<String>(
     "Эксплуатация подстанций (подстанционного оборудования)",

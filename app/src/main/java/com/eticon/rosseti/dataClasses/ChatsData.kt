@@ -4,7 +4,7 @@ data class ChatsData (
     var id: Int = 0,
     var name:String = "",
     var description:String = "",
-    var app:UserApplication = UserApplication(),
+    var apps:UserApplication = UserApplication(),
     var likes:Int = 0,
     var dislikes:Int = 0,
     var comments:List<Comment> = listOf()
