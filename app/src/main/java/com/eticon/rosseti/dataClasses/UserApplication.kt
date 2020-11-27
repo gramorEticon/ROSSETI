@@ -8,7 +8,7 @@ data class UserApplication (
     var user_id:Int = 0,
     var dateStart:String = "",
     var dateEnd:String = "",
-    var Status:String = "",
+    var status:String = "",
     var userList:List<UserData> = listOf(),
     var name:String = "",
     var category:String = "",
@@ -33,7 +33,7 @@ data class Stage(
     var name:String = "",
     var days:Int = 0
 )
-
+//Дата класс вознаграждения
 data class Award(
     var firstName: String = "",
     var lastName:String = "",
