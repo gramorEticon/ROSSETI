@@ -5,7 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.eticon.rosseti.R
+import com.eticon.rosseti.adapters.EtapAdapter
+import com.eticon.rosseti.adapters.RashodAdapter
+import com.eticon.rosseti.dataClasses.UserApplication
+import com.eticon.rosseti.dataClasses.order
+import com.eticon.rosseti.livedata.applicationUserLiveData
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,7 +30,11 @@ class CreateOrderSrokFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    lateinit var recyclerView: RecyclerView
+    lateinit var add: ConstraintLayout
+    lateinit var next: ConstraintLayout
+    lateinit var down: ConstraintLayout
+    lateinit var btn_back: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,10 +47,44 @@ class CreateOrderSrokFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_order_srok, container, false)
+        var view = inflater.inflate(R.layout.fragment_create_order_srok, container, false)
+        initView(view)
+        next.setOnClickListener {
+            order.user_id = 1
+            order.dateStart = "11.12.2020"
+            order.status = "Экспертиза"
+            var data = applicationUserLiveData.value
+            if (data != null){
+                data.add(order)
+                applicationUserLiveData.value = data
+            }
+            else {
+                applicationUserLiveData.value = mutableListOf(order)
+            }
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, OrderFragment()).commit()
+        }
+        down.setOnClickListener {
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderRashodragment()).commit()
+        }
+        btn_back.setOnClickListener {
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, OrderFragment()).commit()
+        }
+        var data = order.stages
+        recyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
+        var adapter = EtapAdapter(data)
+        recyclerView.adapter = adapter
+        add.setOnClickListener {
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderAddSrokFragment()).commit()
+        }
+        return view
     }
-
+    fun initView(view:View){
+        recyclerView = view.findViewById(R.id.recycler_srok)
+        add = view.findViewById(R.id.add_srok)
+        next = view.findViewById(R.id.next)
+        down = view.findViewById(R.id.down)
+        btn_back = view.findViewById(R.id.back_btn)
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

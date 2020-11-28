@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.eticon.rosseti.R
+import com.eticon.rosseti.dataClasses.Cost
+import com.eticon.rosseti.dataClasses.order
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +39,13 @@ class CreateOrderAddRashodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var view = inflater.inflate(R.layout.fragment_create_order_add_rashod, container, false)
+        var btn = view.findViewById<ConstraintLayout>(R.id.save)
+        btn.setOnClickListener {
+            var statia = view.findViewById<EditText>(R.id.statia).text.toString()
+            var sum = view.findViewById<EditText>(R.id.summa).text.toString().toInt()
+            order.costs.add(Cost(name = statia, sumMax = sum))
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderRashodragment()).commit()
+        }
         return view
     }
 
