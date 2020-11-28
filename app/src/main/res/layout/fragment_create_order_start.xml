@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OrderFragments.CreateOrderStartFragment"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Создание предложения"
+        style="@style/text_blue_bold"
+        android:textSize="18dp"
+        app:layout_constraintTop_toTopOf="@id/back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toEndOf="@id/back_btn"
+        android:layout_marginStart="16dp"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/blue"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:hint="Краткое название"
+        android:textColorHint="@color/gray"
+        android:fontFamily="@font/avenir_demi"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        />
+
+    <EditText
+        android:id="@+id/organization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/blue"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:hint="Наименование организации"
+        android:textColorHint="@color/gray"
+        android:fontFamily="@font/avenir_demi"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/label_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Категории в части цифровой трансформации:"
+        style="@style/text_blue_bold"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/organization"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <RadioGroup
+        app:layout_constraintTop_toBottomOf="@id/label_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp">
+
+        <RadioButton android:id="@+id/digital_net"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Цифровая сеть"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_demi"
+            android:buttonTint="@color/blue"
+            />
+
+        <RadioButton android:id="@+id/digital_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Цифровое управление комапанией"
+            android:textColor="@color/black"
+            android:buttonTint="@color/blue"
+            android:fontFamily="@font/avenir_demi"
+            />
+
+        <RadioButton android:id="@+id/dop_servises"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Дополнительные сервисы"
+            android:textColor="@color/black"
+            android:buttonTint="@color/blue"
+            android:fontFamily="@font/avenir_demi"
+            />
+        <RadioButton android:id="@+id/info_secur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Система информационной безопасности"
+            android:textColor="@color/black"
+            android:buttonTint="@color/blue"
+            android:fontFamily="@font/avenir_demi"
+            />
+        <RadioButton android:id="@+id/not_chek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Не относится"
+            android:textColor="@color/black"
+            android:buttonTint="@color/blue"
+            android:fontFamily="@font/avenir_demi"
+            />
+    </RadioGroup>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toTopOf="@id/down"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/text_white_bold"
+            android:text="Далее"
+            android:textSize="18dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/down"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/text_white_bold"
+            android:text="Назад"
+            android:textSize="18dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
