@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.eticon.rosseti.R
 import com.eticon.rosseti.dataClasses.UserApplication
+import com.eticon.rosseti.livedata.liveMore
 import org.w3c.dom.Text
 
 class OrdersAdapter (var items: List<UserApplication>) : RecyclerView.Adapter<OrdersAdapter.MainHolder>() {
@@ -25,6 +27,7 @@ class OrdersAdapter (var items: List<UserApplication>) : RecyclerView.Adapter<Or
         private val category = itemView.findViewById<TextView>(R.id.category)
         private val status = itemView.findViewById<TextView>(R.id.status)
         private val date = itemView.findViewById<TextView>(R.id.date)
+        private val butt = itemView.findViewById<ConstraintLayout>(R.id.more)
 
 
         fun bind(item: UserApplication) {
@@ -32,10 +35,10 @@ class OrdersAdapter (var items: List<UserApplication>) : RecyclerView.Adapter<Or
             category.text = item.category
             status.text = item.status
             date.text = item.dateStart
-            /*itemView.setOnClickListener {
-                if (adapterPosition != RecyclerView.NO_POSITION) callback.onItemClicked(items[adapterPosition])
+            butt.setOnClickListener {
+                liveMore.value = item
+            }
 
-            }*/
 
         }
     }
