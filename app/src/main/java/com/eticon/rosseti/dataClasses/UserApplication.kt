@@ -86,3 +86,13 @@ fun awardToJSOnString(){
 }
 
 var order = UserApplication()
+
+var orderList = mutableListOf<UserApplication>(
+        UserApplication(id = 1, user_id = 1, name= "Тестовая 1"),
+        UserApplication(id = 2, user_id = 2, name= "Тестовая 4"),
+        UserApplication(id = 3, user_id = 1, name= "Другое название"),
+        UserApplication(id = 4, user_id = 3, name= "Еще одно название"),
+        UserApplication(id = 5, user_id = 4, name= "Сново название")
+
+)
+

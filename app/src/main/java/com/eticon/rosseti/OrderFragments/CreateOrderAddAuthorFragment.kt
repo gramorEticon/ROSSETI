@@ -5,7 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.eticon.rosseti.R
+import com.eticon.rosseti.dataClasses.SubscribeUser
+import com.eticon.rosseti.dataClasses.order
+import com.eticon.rosseti.livedata.userListData
+import okhttp3.internal.notify
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,15 +35,34 @@ class CreateOrderAddAuthorFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
+    lateinit var firstName:TextView
+    lateinit var add:ConstraintLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_order_add_author, container, false)
-    }
+        var view = inflater.inflate(R.layout.fragment_create_order_add_author, container, false)
+        initView(view)
+        add.setOnClickListener {
+            order.userList.add(SubscribeUser(name = firstName.text.toString()))
+            var d = userListData.value
+            if (d != null) {
+                d!!.add(SubscribeUser(name = firstName.text.toString()))
+                userListData.value = d
+            }
+            else {
+                userListData.value = mutableListOf(SubscribeUser(name = firstName.text.toString()))
+            }
 
+
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderAuthorFragment()).commit()
+        }
+        return view
+    }
+    fun initView(view:View){
+        firstName = view.findViewById(R.id.fio)
+        add = view.findViewById(R.id.save)
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -60,7 +60,7 @@ class OrderFragment : Fragment() {
                     }
                 }
                 myOrderRecyclerView = view.findViewById(R.id.my_order_recycler)
-                myOrderRecyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.HORIZONTAL, false)
+                myOrderRecyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
                 myOrderRecyclerView.adapter = OrdersAdapter(orders)
             }
         })

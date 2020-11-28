@@ -34,8 +34,8 @@ class CreateOrderAddRashodFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_order_add_rashod, container, false)
+        var view = inflater.inflate(R.layout.fragment_create_order_add_rashod, container, false)
+        return view
     }
 
     companion object {

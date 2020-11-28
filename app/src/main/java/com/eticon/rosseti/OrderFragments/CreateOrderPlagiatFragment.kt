@@ -5,7 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.eticon.rosseti.R
+import com.eticon.rosseti.adapters.OrdersAdapter
+import com.eticon.rosseti.dataClasses.EditDistanceRecursive
+import com.eticon.rosseti.dataClasses.UserApplication
+import com.eticon.rosseti.dataClasses.order
+import com.eticon.rosseti.livedata.applicationUserLiveData
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,24 +37,35 @@ class CreateOrderPlagiatFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
+    lateinit var recyclerView: RecyclerView
+    lateinit var next:ConstraintLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_order_plagiat, container, false)
+        var view = inflater.inflate(R.layout.fragment_create_order_plagiat, container, false)
+        initView(view)
+        return view
     }
-
+    fun initView(view:View){
+        next = view.findViewById(R.id.next)
+        recyclerView = view.findViewById(R.id.recycler_plagiat)
+        recyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
+        var f = EditDistanceRecursive
+        var liveOrder = applicationUserLiveData.value as MutableList<UserApplication>
+        var orders = mutableListOf<UserApplication>()
+        for (o in liveOrder){
+            if (f.calculateTwo(o.name, order.name)<10){
+                orders.add(o)
+            }
+        }
+        recyclerView.adapter = OrdersAdapter(orders)
+        next.setOnClickListener {
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderDesriptionFragment()).commit()
+        }
+    }
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateOrderPlagiatFragment.
-         */
+
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
