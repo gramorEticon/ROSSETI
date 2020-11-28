@@ -13,4 +13,3 @@ var applicationUserLiveData = MutableLiveData<MutableList<UserApplication>>()
 var userListData = MutableLiveData<MutableList<SubscribeUser>>()
 
 var forum = MutableLiveData<List<ChatsData>>()
-

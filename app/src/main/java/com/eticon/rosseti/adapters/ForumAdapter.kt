@@ -1,14 +1,20 @@
 package com.eticon.rosseti.adapters
 
+import android.media.Image
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.eticon.rosseti.ForumFragments.DisscusFragment
+import com.eticon.rosseti.NavigatorActivity
 import com.eticon.rosseti.R
 import com.eticon.rosseti.dataClasses.ChatsData
 
-class ForumAdapter (var items: List<ChatsData>) : RecyclerView.Adapter<ForumAdapter.MainHolder>() {
+class ForumAdapter (var items: List<ChatsData>, val activity: FragmentActivity) : RecyclerView.Adapter<ForumAdapter.MainHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)  = MainHolder(
         LayoutInflater.from(parent.context).inflate(
             R.layout.element_forum, parent, false))
@@ -28,6 +34,7 @@ class ForumAdapter (var items: List<ChatsData>) : RecyclerView.Adapter<ForumAdap
         private val like = itemView.findViewById<TextView>(R.id.like_count)
         private val dislike = itemView.findViewById<TextView>(R.id.dislike_count)
         private val comment = itemView.findViewById<TextView>(R.id.comment_count)
+        private val comment_btn = itemView.findViewById<ImageView>(R.id.comment)
 
 
         fun bind(item: ChatsData, position: Int) {
@@ -37,6 +44,17 @@ class ForumAdapter (var items: List<ChatsData>) : RecyclerView.Adapter<ForumAdap
             like.text = item.likes.toString()
             dislike.text = item.dislikes.toString()
             comment.text = item.comments.count().toString()
+
+            comment_btn.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("forum_id", item.id)
+                val fr = DisscusFragment()
+                fr.arguments = bundle
+                activity!!.supportFragmentManager.beginTransaction().replace(R.id.fl_content, fr).commit()
+
+            }
+
+
 
 
         }
