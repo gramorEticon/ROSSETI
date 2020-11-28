@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ROSSETI"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".NavigatorActivity"
             android:label="@string/title_activity_navigator"
