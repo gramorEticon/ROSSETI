@@ -11,6 +11,8 @@ import com.eticon.rosseti.NotificationFragments.NotificationFragment
 import com.eticon.rosseti.OrderFragments.OrderFragment
 import com.eticon.rosseti.ProfileFragments.ProfileFragment
 import com.eticon.rosseti.ReestrsFragments.ReestrFragment
+import com.eticon.rosseti.dataClasses.data
+import com.eticon.rosseti.livedata.forum
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavigatorActivity : AppCompatActivity() {
@@ -20,6 +22,7 @@ class NavigatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigator)
         init()
+        forum.value = data
         var spManager = supportFragmentManager
         val content = spManager.findFragmentById(R.id.fl_content)
         if (content == null) {
