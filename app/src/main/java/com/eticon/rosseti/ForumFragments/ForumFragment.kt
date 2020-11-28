@@ -43,7 +43,7 @@ class ForumFragment : Fragment() {
         lateinit var recyclerView: RecyclerView
         recyclerView = view.findViewById(R.id.recycler_forum)
         recyclerView.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
-        var adapter = ForumAdapter(forum.value!!)
+        var adapter = ForumAdapter(forum.value!!, activity!!)
         recyclerView.adapter = adapter
 
 
