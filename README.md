@@ -24,7 +24,7 @@
 * Клонируйте репозиторий и установите зависимости.
 
 ```bash
-git clone тут будет ссылка на гит
+git clone https://github.com/gramorEticon/ROSSETI.git
 ```
 
 * Откройте Android Studio и создайте новый проект из только что загруженного источника.
