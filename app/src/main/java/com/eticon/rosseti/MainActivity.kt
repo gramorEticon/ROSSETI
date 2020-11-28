@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var api = ApiMethods()
-        api.getUser()
-        api.getAppList()
+       // api.getUser()
+      //  api.getAppList()
 
 
 

@@ -10,6 +10,8 @@ import org.json.JSONObject
 data class UserApplication (
     var id:Int = 0,
     var user_id:Int = 0,
+    var subcategory:String = "",
+    var org:String = "",
     var dateStart:String = "",
     var status:String = "",
     var userList:MutableList<SubscribeUser> = mutableListOf(),
@@ -81,6 +83,6 @@ var statusAppList = listOf<String>(
 fun awardToJSOnString(){
 
 
-
-
 }
+
+var order = UserApplication()

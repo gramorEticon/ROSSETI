@@ -48,15 +48,7 @@ class ProfileFragment : Fragment() {
                 dolz.text = profile.spez
             }
         })
-        applicationUserLiveData.observe(this, Observer {
-            var test = applicationUserLiveData.value
-            if (test != null){
 
-
-                var api = ApiMethods()
-            }
-
-        })
         return view
     }
     //Инициальзация всех вью фрагмента

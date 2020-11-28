@@ -48,7 +48,6 @@ class ApiMethods(){
     fun getAppList(){
         GlobalScope.launch(Dispatchers.IO){
             var str = get(api.adress + api.task_list)
-            Log.d("str", str)
             var dataList = mutableListOf<UserApplication>()
             var jsMas = JSONArray(str)
             for (i in 0..jsMas.length()-1){
@@ -116,7 +115,7 @@ class ApiMethods(){
         val request = builder.build()
         val call = client.newCall(request)
         var r =  call.execute().body?.string().toString()
-        Log.d("RESSS", r)
+
     }
 
   /*  fun insertUserApp(task:UserApplication){

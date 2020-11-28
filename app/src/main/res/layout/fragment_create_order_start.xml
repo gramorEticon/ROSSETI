@@ -97,56 +97,59 @@
 
 
             <RadioGroup
-                app:layout_constraintTop_toBottomOf="@id/label_category"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/rg_gr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
                 android:orientation="vertical"
-                android:layout_marginStart="40dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_category">
 
-                <RadioButton android:id="@+id/digital_net"
+                <RadioButton
+                    android:id="@+id/digital_net"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue"
+                    android:fontFamily="@font/avenir_demi"
                     android:text="Цифровая сеть"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/avenir_demi"
-                    android:buttonTint="@color/blue"
-                    />
+                    android:textColor="@color/black" />
 
-                <RadioButton android:id="@+id/digital_company"
+                <RadioButton
+                    android:id="@+id/digital_company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue"
+                    android:fontFamily="@font/avenir_demi"
                     android:text="Цифровое управление комапанией"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/blue"
-                    android:fontFamily="@font/avenir_demi"
-                    />
+                    android:textColor="@color/black" />
 
-                <RadioButton android:id="@+id/dop_servises"
+                <RadioButton
+                    android:id="@+id/dop_servises"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue"
+                    android:fontFamily="@font/avenir_demi"
                     android:text="Дополнительные сервисы"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/blue"
-                    android:fontFamily="@font/avenir_demi"
-                    />
-                <RadioButton android:id="@+id/info_secur"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/info_secur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue"
+                    android:fontFamily="@font/avenir_demi"
                     android:text="Система информационной безопасности"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/blue"
-                    android:fontFamily="@font/avenir_demi"
-                    />
-                <RadioButton android:id="@+id/not_chek"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/not_chek"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Не относится"
-                    android:textColor="@color/black"
                     android:buttonTint="@color/blue"
                     android:fontFamily="@font/avenir_demi"
-                    />
+                    android:text="Не относится"
+                    android:textColor="@color/black" />
             </RadioGroup>
         </LinearLayout>
     </ScrollView>
