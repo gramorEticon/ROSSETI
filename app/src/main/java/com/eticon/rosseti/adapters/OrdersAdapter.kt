@@ -5,13 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.eticon.rosseti.R
+import com.eticon.rosseti.ReestrsFragments.NewReestrFragment
+import com.eticon.rosseti.ReestrsFragments.VisionOrderFragment
 import com.eticon.rosseti.dataClasses.UserApplication
 import com.eticon.rosseti.livedata.liveMore
 import org.w3c.dom.Text
 
-class OrdersAdapter (var items: List<UserApplication>) : RecyclerView.Adapter<OrdersAdapter.MainHolder>() {
+class OrdersAdapter (var items: List<UserApplication>, var activity: FragmentActivity) : RecyclerView.Adapter<OrdersAdapter.MainHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)  = MainHolder(
             LayoutInflater.from(parent.context).inflate(
                     R.layout.element_order, parent, false))
@@ -37,6 +40,8 @@ class OrdersAdapter (var items: List<UserApplication>) : RecyclerView.Adapter<Or
             date.text = item.dateStart
             butt.setOnClickListener {
                 liveMore.value = item
+
+                activity!!.supportFragmentManager?.beginTransaction()?.replace(R.id.fl_content, VisionOrderFragment())?.commit()
             }
 
 

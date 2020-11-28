@@ -59,7 +59,7 @@ class CreateOrderPlagiatFragment : Fragment() {
                 orders.add(o)
             }
         }
-        recyclerView.adapter = OrdersAdapter(orders)
+        recyclerView.adapter = OrdersAdapter(orders, activity!!)
         next.setOnClickListener {
             activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderDesriptionFragment()).commit()
         }

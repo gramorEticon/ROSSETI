@@ -1,21 +1,24 @@
 package com.eticon.rosseti.ReestrsFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.eticon.rosseti.OrderFragments.CreateOrderRaspredelenieFragment
+import com.eticon.rosseti.OrderFragments.OrderFragment
 import com.eticon.rosseti.R
 import com.eticon.rosseti.adapters.AuthorAdapter
 import com.eticon.rosseti.adapters.EtapAdapter
 import com.eticon.rosseti.adapters.RashodAdapter
 import com.eticon.rosseti.livedata.liveMore
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,17 +33,17 @@ private const val ARG_PARAM2 = "param2"
 class VisionOrderFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var name:TextView
+    lateinit var name: TextView
     lateinit var org:TextView
     lateinit var category:TextView
     lateinit var category_dig:TextView
     lateinit var poloj:TextView
     lateinit var reshenie:TextView
     lateinit var effect:TextView
-    lateinit var recycler_author:RecyclerView
+    lateinit var recycler_author: RecyclerView
     lateinit var recycler_zatrat:RecyclerView
     lateinit var recycler_srok:RecyclerView
-    lateinit var back:ImageView
+    lateinit var back: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -50,11 +53,12 @@ class VisionOrderFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         var view  =  inflater.inflate(R.layout.fragment_vision_order, container, false)
         initView(view)
+        Log.d("CLICK", "PPPP")
         liveMore.observe(this, Observer {
             var data = liveMore.value
             if (data!=null){
@@ -83,14 +87,22 @@ class VisionOrderFragment : Fragment() {
 
             }
         })
+
         back.setOnClickListener {
-            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, ReestrFragment()).commit()
+            Log.d("CLICK", "CLICK2")
+
+            activity!!.supportFragmentManager?.beginTransaction()?.replace(R.id.fl_content, VisionOrderFragment())?.commit()
+
+            //activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
+            //activity?.supportFragmentManager?.beginTransaction()?.add(R.id.fl_content, NewReestrFragment())?.commit()
+            //activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
+            Log.d("CLICK", "CLICK3")
         }
 
         return view
     }
 
-    fun initView(view:View){
+    fun initView(view: View){
         name = view.findViewById(R.id.name)
         org = view.findViewById(R.id.org)
         category = view.findViewById(R.id.category)

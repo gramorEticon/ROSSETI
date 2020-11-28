@@ -10,6 +10,7 @@ import com.eticon.rosseti.ForumFragments.ForumFragment
 import com.eticon.rosseti.NotificationFragments.NotificationFragment
 import com.eticon.rosseti.OrderFragments.OrderFragment
 import com.eticon.rosseti.ProfileFragments.ProfileFragment
+import com.eticon.rosseti.ReestrsFragments.NewReestrFragment
 import com.eticon.rosseti.ReestrsFragments.ReestrFragment
 import com.eticon.rosseti.dataClasses.data
 import com.eticon.rosseti.livedata.forum
@@ -36,7 +37,7 @@ class NavigatorActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.reestr -> {
-                    spManager.beginTransaction().replace(R.id.fl_content, ReestrFragment()).commit()
+                    spManager.beginTransaction().replace(R.id.fl_content, NewReestrFragment()).commit()
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.my_order -> {
