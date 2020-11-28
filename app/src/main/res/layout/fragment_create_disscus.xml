@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".OrderFragments.CreateOrderDesriptionFragment">
+    tools:context=".OrderFragments.CreateDisscus">
 
     <ImageView
         android:id="@+id/back_btn"
@@ -21,7 +21,7 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Создание предложения"
+        android:text="Создание обсуждения"
         style="@style/text_blue_bold"
         android:textSize="20sp"
         app:layout_constraintTop_toTopOf="@id/back_btn"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/back_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/next"
+        app:layout_constraintBottom_toTopOf="@id/save"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp">
 
@@ -46,21 +46,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/label_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Описание:"
-                style="@style/text_blue_bold"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@id/label"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="22dp"
-                android:layout_marginTop="40dp"
-                />
 
             <EditText
-                android:id="@+id/polozenie"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/label_desc"
@@ -70,7 +58,7 @@
                 android:backgroundTint="@color/blue"
                 android:layout_marginStart="22dp"
                 android:layout_marginEnd="22dp"
-                android:hint="Описание действительного положения"
+                android:hint="Нащвание обсуждения"
                 android:textColorHint="@color/gray"
                 android:fontFamily="@font/avenir_demi"
                 android:textColor="@color/black"
@@ -78,7 +66,7 @@
                 />
 
             <EditText
-                android:id="@+id/reshenie"
+                android:id="@+id/desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/polozenie"
@@ -88,30 +76,13 @@
                 android:backgroundTint="@color/blue"
                 android:layout_marginStart="22dp"
                 android:layout_marginEnd="22dp"
-                android:hint="Описание предлагаемого решения"
+                android:hint="Описание"
                 android:textColorHint="@color/gray"
                 android:fontFamily="@font/avenir_demi"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 />
 
-            <EditText
-                android:id="@+id/effect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/reshenie"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/blue"
-                android:layout_marginStart="22dp"
-                android:layout_marginEnd="22dp"
-                android:hint="Ожидаемый положительный эффект"
-                android:textColorHint="@color/gray"
-                android:fontFamily="@font/avenir_demi"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -143,37 +114,12 @@
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         </LinearLayout>
     </ScrollView>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/next"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        app:layout_constraintBottom_toTopOf="@id/down"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bg_blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            style="@style/text_white_bold"
-            android:text="Далее"
-            android:textSize="18sp"/>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/down"
+        android:id="@+id/save"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -193,29 +139,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             style="@style/text_white_bold"
-            android:text="Назад"
+            android:text="Создать"
             android:textSize="18sp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
