@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="text_blue_bold">
+        <item name="fontFamily">@font/avenir_bold</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
 
+    <style name="text_gray_bold">
+        <item name="fontFamily">@font/avenir_bold</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
 
 </resources>
