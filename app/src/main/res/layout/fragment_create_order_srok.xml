@@ -34,7 +34,7 @@
         android:id="@+id/label_srok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Затраты на внедрение:"
+        android:text="Этапы внедрения:"
         style="@style/text_blue_bold"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/label"

@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.eticon.rosseti.R
+import com.eticon.rosseti.dataClasses.Cost
+import com.eticon.rosseti.dataClasses.Stage
+import com.eticon.rosseti.dataClasses.order
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,19 +39,19 @@ class CreateOrderAddSrokFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_order_add_srok, container, false)
+        var view =  inflater.inflate(R.layout.fragment_create_order_add_srok, container, false)
+        var btn = view.findViewById<ConstraintLayout>(R.id.save)
+        btn.setOnClickListener {
+            var name  = view.findViewById<EditText>(R.id.name).text.toString()
+            var srok = view.findViewById<EditText>(R.id.srok).text.toString().toInt()
+            order.stages.add(Stage(name = name, days = srok))
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, CreateOrderSrokFragment()).commit()
+        }
+        return view
     }
 
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateOrderAddSrokFragment.
-         */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
