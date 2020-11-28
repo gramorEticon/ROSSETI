@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ReestrsFragments.VisionOrderFragment">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Просмотр заявки"
+        style="@style/text_blue_bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toEndOf="@id/back_btn"
+        android:layout_marginStart="16dp"
+        />
+
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/back_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/org_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Организация:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/org"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/category_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Категория:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/category_dig_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Категория в части цифровой трансформации:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/category_dig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/poloj_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Описани действительного положения:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/poloj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/reshenie_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Описани предлагаемого решения:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/reshenie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/effect_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ожидаемый положительный эффект:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+
+            <TextView
+                android:id="@+id/effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit am. Lorem"
+                style="@style/text_gray_demi"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/author_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cписок авторов:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/zatrat_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Затраты на внедрение:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_zatrat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/srok_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Этапы:"
+                style="@style/text_blue_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="20dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_srok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="10dp"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/like"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintTop_toBottomOf="@id/edit_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_blue"
+                android:elevation="10dp"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/like_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/text_white_bold"
+                        android:text="Нравится"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_thumb_up_w"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/like_btn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/like_count"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:id="@+id/like_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/text_white_bold"
+                        android:text="10"
+                        android:textSize="18sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dislike"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintTop_toBottomOf="@id/edit_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_blue"
+                android:elevation="10dp"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/dislike_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/text_white_bold"
+                        android:text="Не нравится"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_thumb_down_w"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/dislike_btn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/dislike_count"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:id="@+id/dislike_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/text_white_bold"
+                        android:text="10"
+                        android:textSize="18sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/disscus"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintTop_toBottomOf="@id/edit_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_blue"
+                android:elevation="10dp"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/edit_pass_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/text_white_bold"
+                        android:text="Перейти к обсуждению"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_chat_bubble_outline_w"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/edit_pass_btn"
+                        android:layout_marginStart="10dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_border"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:elevation="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/text_blue_bold"
+                    android:text="Предложение по улучшению"
+                    android:textSize="18sp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

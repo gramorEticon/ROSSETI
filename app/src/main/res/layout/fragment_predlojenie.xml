@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragments.PredlojenieFragment">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Предложение по улучшению"
+        style="@style/text_blue_bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toEndOf="@id/back_btn"
+        android:layout_marginStart="16dp"
+        />
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/save"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/statia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/blue"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                android:hint="Что бы вы посоветовали?"
+                android:textColorHint="@color/gray"
+                android:fontFamily="@font/avenir_demi"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/bg_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/text_white_bold"
+            android:text="Отправить"
+            android:textSize="18sp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
