@@ -8,16 +8,16 @@ data class UserApplication (
     var user_id:Int = 0,
     var dateStart:String = "",
     var status:String = "",
-    var userList:List<SubscribeUser> = listOf(),
+    var userList:MutableList<SubscribeUser> = mutableListOf(),
     var name:String = "",
     var category:String = "",
     var problems:String = "",
     var decision:String = "",
     var effect:String = "",
-    var costs:List<Cost> = listOf(),
-    var stages : List<Stage> = listOf(),
-    var awards:List<Award> = listOf(),
-    var comments:List<Comment> = listOf()
+    var costs:MutableList<Cost> =  mutableListOf(),
+    var stages : MutableList<Stage> =  mutableListOf(),
+    var awards:MutableList<Award> =  mutableListOf(),
+    var comments:MutableList<Comment> =  mutableListOf()
 )
 
 //Дата класс необходимый для реализации затрат
