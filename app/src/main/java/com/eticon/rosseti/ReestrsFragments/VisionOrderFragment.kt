@@ -5,7 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.eticon.rosseti.OrderFragments.CreateOrderRaspredelenieFragment
 import com.eticon.rosseti.R
+import com.eticon.rosseti.adapters.AuthorAdapter
+import com.eticon.rosseti.adapters.EtapAdapter
+import com.eticon.rosseti.adapters.RashodAdapter
+import com.eticon.rosseti.livedata.liveMore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,10 +28,19 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class VisionOrderFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    lateinit var name:TextView
+    lateinit var org:TextView
+    lateinit var category:TextView
+    lateinit var category_dig:TextView
+    lateinit var poloj:TextView
+    lateinit var reshenie:TextView
+    lateinit var effect:TextView
+    lateinit var recycler_author:RecyclerView
+    lateinit var recycler_zatrat:RecyclerView
+    lateinit var recycler_srok:RecyclerView
+    lateinit var back:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,10 +53,57 @@ class VisionOrderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vision_order, container, false)
+        var view  =  inflater.inflate(R.layout.fragment_vision_order, container, false)
+        initView(view)
+        liveMore.observe(this, Observer {
+            var data = liveMore.value
+            if (data!=null){
+                name.text = data.name
+                org.text = data.org
+                category.text = data.category
+                category_dig.text = data.subcategory
+                poloj.text = data.problems
+                reshenie.text = data.decision
+                effect.text = data.effect
+                if (data.userList.size >0){
+                    recycler_author.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
+                    var adapter = AuthorAdapter(data.userList)
+                    recycler_author.adapter = adapter
+                }
+                if (data.costs.size> 0){
+                    recycler_zatrat.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
+                    var adapter = RashodAdapter(data.costs)
+                    recycler_zatrat.adapter = adapter
+                }
+                if (data.stages.size > 0){
+                    recycler_srok.layoutManager = LinearLayoutManager(activity?.applicationContext, LinearLayoutManager.VERTICAL, false)
+                    var adapter = EtapAdapter(data.stages)
+                    recycler_srok.adapter = adapter
+                }
+
+            }
+        })
+        back.setOnClickListener {
+            activity!!.supportFragmentManager!!.beginTransaction()!!.replace(R.id.fl_content, ReestrFragment()).commit()
+        }
+
+        return view
     }
 
+    fun initView(view:View){
+        name = view.findViewById(R.id.name)
+        org = view.findViewById(R.id.org)
+        category = view.findViewById(R.id.category)
+        category_dig = view.findViewById(R.id.category_dig)
+        poloj = view.findViewById(R.id.poloj)
+        reshenie = view.findViewById(R.id.reshenie)
+        effect = view.findViewById(R.id.effect)
+        recycler_author= view.findViewById(R.id.recycler_author)
+        recycler_srok= view.findViewById(R.id.recycler_srok)
+        recycler_zatrat= view.findViewById(R.id.recycler_zatrat)
+        back = view.findViewById(R.id.back_btn)
+
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
