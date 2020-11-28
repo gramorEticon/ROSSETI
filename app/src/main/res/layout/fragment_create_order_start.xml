@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Создание предложения"
         style="@style/text_blue_bold"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintTop_toTopOf="@id/back_btn"
         app:layout_constraintBottom_toBottomOf="@id/back_btn"
         app:layout_constraintStart_toEndOf="@id/back_btn"
@@ -61,7 +61,7 @@
                 android:textColorHint="@color/gray"
                 android:fontFamily="@font/avenir_demi"
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 />
 
             <EditText
@@ -79,7 +79,7 @@
                 android:textColorHint="@color/gray"
                 android:fontFamily="@font/avenir_demi"
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 />
 
             <TextView
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="Категории в части цифровой трансформации:"
                 style="@style/text_blue_bold"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@id/organization"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="22dp"
@@ -175,7 +175,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             style="@style/text_white_bold"
             android:text="Далее"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -202,7 +202,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             style="@style/text_white_bold"
             android:text="Назад"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

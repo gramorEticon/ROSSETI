@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Создание предложения"
         style="@style/text_blue_bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintTop_toTopOf="@id/back_btn"
         app:layout_constraintBottom_toBottomOf="@id/back_btn"
         app:layout_constraintStart_toEndOf="@id/back_btn"
@@ -37,7 +37,7 @@
         android:text="Ваша заявка похожа на уже существующие, ознакомтесь с ними перед тем как продолжить:"
         style="@style/text_blue_bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/label"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="22dp"
@@ -78,7 +78,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             style="@style/text_white_bold"
             android:text="Далее"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,7 +105,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             style="@style/text_white_bold"
             android:text="Назад"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

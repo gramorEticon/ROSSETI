@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Профиль"
         style="@style/text_blue_bold"
-        android:textSize="26dp"
+        android:textSize="26sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Кульшин Роман Сергеевич"
             style="@style/text_blue_bold"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             />
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:text="ДЗО:"
             style="@style/text_blue_bold"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/fio"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"/>
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:text="Должность:"
             style="@style/text_blue_bold"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/dzo"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="6dp"/>
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="Электромонтер оперативно-выездной бригады"
             style="@style/text_gray_bold"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/dolz_label"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
@@ -129,7 +129,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 style="@style/text_white_bold"
                 android:text="Редактировать профиль"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:layout_width="30dp"
@@ -171,7 +171,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 style="@style/text_white_bold"
                 android:text="Сменить пароль"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
             <ImageView
                 android:layout_width="30dp"
@@ -206,7 +206,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 style="@style/text_blue_bold"
                 android:text="Выход"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
