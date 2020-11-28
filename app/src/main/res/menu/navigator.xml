@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/forum"
+        android:icon="@drawable/ic_library_books"
+        android:title="Форум" />
+
+    <item
+        android:id="@+id/reestr"
+        android:icon="@drawable/ic_view_module"
+        android:title="Реестр" />
+
+    <item
+        android:id="@+id/my_order"
+        android:icon="@drawable/ic_recent_actors"
+        android:title="Мои заявки"/>
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/ic_notifications_active"
+        android:title="Оповещения"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Профиль"/>
+</menu>
