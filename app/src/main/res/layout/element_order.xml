@@ -41,7 +41,6 @@
         style="@style/text_gray_demi"
         android:layout_marginStart="10dp"
         app:layout_constraintTop_toTopOf="@id/category_label"
-        app:layout_constraintBottom_toBottomOf="@id/category_label"
         app:layout_constraintStart_toEndOf="@id/category_label"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="10dp"
@@ -55,7 +54,7 @@
         style="@style/text_blue_demi"
         android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@id/category_label"
+        app:layout_constraintTop_toBottomOf="@id/category"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="12sp"/>
 
@@ -67,7 +66,6 @@
         style="@style/text_gray_demi"
         android:layout_marginStart="10dp"
         app:layout_constraintTop_toTopOf="@id/status_label"
-        app:layout_constraintBottom_toBottomOf="@id/status_label"
         app:layout_constraintStart_toEndOf="@id/status_label"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="10dp"
@@ -81,7 +79,7 @@
         style="@style/text_blue_demi"
         android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@id/status_label"
+        app:layout_constraintTop_toBottomOf="@id/status"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="12sp"/>
 
@@ -93,7 +91,6 @@
         style="@style/text_gray_demi"
         android:layout_marginStart="10dp"
         app:layout_constraintTop_toTopOf="@id/date_label"
-        app:layout_constraintBottom_toBottomOf="@id/date_label"
         app:layout_constraintStart_toEndOf="@id/date_label"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="10dp"
