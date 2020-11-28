@@ -29,10 +29,9 @@ git clone https://github.com/gramorEticon/ROSSETI.git
 
 * Откройте Android Studio и создайте новый проект из только что загруженного источника.
 * Запустите проект
-
 ## Ссылки
-* Видео демонстрация:
-* ссылка на apk-файл:
+* [Видео демонстрация]()
+* [Cсылка на apk-файл](https://yadi.sk/d/XSEoMxlRyFDA-w?w=1):
 
 
 
