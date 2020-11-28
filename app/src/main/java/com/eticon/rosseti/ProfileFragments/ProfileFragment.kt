@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.eticon.rosseti.R
+import com.eticon.rosseti.api.ApiMethods
+import com.eticon.rosseti.livedata.applicationUserLiveData
 import com.eticon.rosseti.livedata.userProfile
+import org.json.JSONArray
+import org.json.JSONObject
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -43,6 +47,15 @@ class ProfileFragment : Fragment() {
                 dzo.text = profile.DZO
                 dolz.text = profile.spez
             }
+        })
+        applicationUserLiveData.observe(this, Observer {
+            var test = applicationUserLiveData.value
+            if (test != null){
+
+
+                var api = ApiMethods()
+            }
+
         })
         return view
     }

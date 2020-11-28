@@ -1,6 +1,10 @@
 package com.eticon.rosseti.dataClasses
 
+import android.util.Log
 import androidx.annotation.VisibleForTesting
+import com.eticon.rosseti.livedata.applicationUserLiveData
+import org.json.JSONArray
+import org.json.JSONObject
 
 //Дата класс которыйв себе содержит заявку
 data class UserApplication (
@@ -73,3 +77,10 @@ var statusAppList = listOf<String>(
     "Тиражирование завершено успешно",
     "Тиражирование завершено неуспешно"
 )
+
+fun awardToJSOnString(){
+
+
+
+
+}
