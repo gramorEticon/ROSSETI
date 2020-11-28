@@ -29,7 +29,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class CreateOrderAuthorFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -47,6 +47,7 @@ class CreateOrderAuthorFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_create_order_author, container, false)
         var authors = order.userList
+        //папап
         initView(view)
         userListData.observe(this, Observer {
             var data = userListData.value
