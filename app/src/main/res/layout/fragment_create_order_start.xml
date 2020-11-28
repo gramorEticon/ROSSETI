@@ -149,7 +149,8 @@
                     android:buttonTint="@color/blue"
                     android:fontFamily="@font/avenir_demi"
                     android:text="Не относится"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:checked="true"/>
             </RadioGroup>
         </LinearLayout>
     </ScrollView>
